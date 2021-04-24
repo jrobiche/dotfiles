@@ -40,12 +40,12 @@ ethernet _first_ {
 }
 
 tztime local {
-  format = "%Y-%m-%d %H:%M:%S %Z"
+        format = "%Y-%m-%d %H:%M:%S %Z"
 }
 
 tztime utc {
-  format = "%Y-%m-%d %H:%M:%S %Z"
-  timezone = "UTC"
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "UTC"
 }
 
 order += "cpu_usage"
