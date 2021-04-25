@@ -1,0 +1,59 @@
+! URXVT
+urxvt.font: xft:IBM Plex Mono Text:style=Regular:size=10,xft:DejaVu Sans Mono for Powerline:style=Book:size=10
+urxvt.letterSpace: 0
+urxvt.scrollBar: false
+
+! Molokai theme
+! https://gist.github.com/vreon/845878
+urxvt.background: #101010
+urxvt.foreground: #d0d0d0
+urxvt.cursorColor: #d0d0d0
+urxvt.color0: #101010
+! urxvt.color1: #960050
+urxvt.color2: #66aa11
+urxvt.color3: #c47f2c
+urxvt.color4: #30309b
+urxvt.color5: #7e40a5
+urxvt.color6: #3579a8
+urxvt.color7: #9999aa
+urxvt.color8: #303030
+urxvt.color9: #ff0090
+urxvt.color10: #80ff00
+urxvt.color11: #ffba68
+urxvt.color12: #5f5fee
+urxvt.color13: #bb88dd
+urxvt.color14: #4eb4fa
+urxvt.color15: #d0d0d0
+! custom
+urxvt.color1: #ab3272
+
+
+! XTerm
+! xterm*faceName: Droid Sans Mono for Powerline:style=Regular
+xterm*faceName: IBM Plex Mono Text:style=Regular
+xterm*faceSize: 10
+
+! Molokai theme
+! https://gist.github.com/vreon/845878
+xterm*background: #101010
+xterm*foreground: #d0d0d0
+xterm*cursorColor: #d0d0d0
+xterm*color0: #101010
+! xterm*color1: #960050
+xterm*color2: #66aa11
+xterm*color3: #c47f2c
+xterm*color4: #30309b
+xterm*color5: #7e40a5
+xterm*color6: #3579a8
+xterm*color7: #9999aa
+xterm*color8: #303030
+xterm*color9: #ff0090
+xterm*color10: #80ff00
+xterm*color11: #ffba68
+xterm*color12: #5f5fee
+xterm*color13: #bb88dd
+xterm*color14: #4eb4fa
+xterm*color15: #d0d0d0
+! custom
+xterm.color1: #ab3272
+
