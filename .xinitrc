@@ -6,7 +6,10 @@ xset s off
 xset -b
 
 # Set background color
-xsetroot -solid "#263238"
+# blue-grey dark
+#xsetroot -solid "#263238"
+# blue very dark
+xsetroot -solid "#0d1117"
 
 # Merge terminal configuration
 xrdb -merge ~/.Xresources
