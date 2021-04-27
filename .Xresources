@@ -1,5 +1,8 @@
 ! URXVT
-urxvt.font: xft:IBM Plex Mono Text:style=Regular:size=10,xft:DejaVu Sans Mono for Powerline:style=Book:size=10
+! IBM Plex Mono Text - https://github.com/IBM/plex
+! DejaVu Sans Mono for Powerline - https://github.com/powerline/fonts
+! MotoyaLCedar - https://fonts.google.com/specimen/Kosugi
+urxvt.font: xft:IBM Plex Mono Text:style=Regular:size=10,xft:DejaVu Sans Mono for Powerline:style=Book:size=10,xft:MotoyaLCedar:style=W3 mono:size=10
 urxvt.letterSpace: 0
 urxvt.scrollBar: false
 
