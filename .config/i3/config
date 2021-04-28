@@ -180,6 +180,7 @@ bar {
         status_command i3status
 
         font pango:$font 9
+        binding_mode_indicator yes
 
 #        # green-grey dark
 #        colors {
@@ -240,6 +241,18 @@ bar {
 #######################################################################
 #exec i3-config-wizard
 
-new_window normal 1
+
+default_border normal 1
+default_floating_border normal 1
 hide_edge_borders both
+
+client.background       #000000
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #37464F #37464F #DDDDDD #37464F   #102027
+client.focused_inactive #102027 #102027 #999999 #102027   #102027
+client.unfocused        #102027 #000A12 #888888 #102027   #102027
+# TODO
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
