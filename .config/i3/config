@@ -9,8 +9,24 @@
 # layout, use the i3-config-wizard
 #
 
-set $font IBM Plex Mono Text
-#set $font DejaVu Sans Mono
+# material blue-grey + cyan theme
+# blue-grey 800 primary
+set $color_primary #37464f
+# blue-grey 800 primary - dark
+set $color_primary_dark #102027
+# blue-grey 900 primary - dark
+set $color_primary_darker #000a12
+
+# text colors
+set $color_text_on_primary #cccccc
+set $color_text_on_primary_dark #aaaaaa
+set $color_text_on_primary_darker #888888
+set $color_muted_text_on_primary #aaaaaa
+set $color_muted_text_on_primary_dark #888888
+set $color_muted_text_on_primary_darker #666666
+
+set $font IBM Plex Mono
+# set $font DejaVu Sans Mono
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -42,16 +58,14 @@ set $right l
 floating_modifier Mod1
 
 # start a terminal
-bindsym Mod1+Return exec i3-sensible-terminal
+# bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec xterm
 
 # kill focused window
 bindsym Mod1+Shift+q kill
 
 # start dmenu (a program launcher)
-# blue-grey dark
-bindsym Mod1+d exec dmenu_run -fn '$font-12' -nb '#102027' -nf '#AAAAAA' -sb '#37464F' -sf '#CCCCCC'
-# blue-grey darker
-#bindsym Mod1+d exec dmenu_run -fn '$font-12' -nb '#000A12' -nf '#AAAAAA' -sb '#AAAAAA' -sf '#000000'
+bindsym Mod1+d exec dmenu_run -fn '$font-12' -nb '$color_primary_dark' -nf '$color_text_on_primary_dark' -sb '$color_primary' -sf '$color_text_on_primary'
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -182,53 +196,34 @@ bar {
         font pango:$font 9
         binding_mode_indicator yes
 
-#        # green-grey dark
-#        colors {
-#                background #1F2D3A
-#                statusline #1ABC9C
-#                separator #1ABC9C
-#
-#                # colorclass       <border> <background> <text>
-#                focused_workspace  #1ABC9C  #1ABC9C      #1F2D3A
-#                inactive_workspace #1F2D3A  #1F2D3A      #1ABC9C
-#        }
-
-        # blue-grey dark
         colors {
-                background #102027
+                background $color_primary_dark
+                statusline $color_text_on_primary_dark
+                separator  $color_muted_text_on_primary_darker
 
-                statusline #AAAAAA
-                separator #AAAAAA
-
-                # with workspace borders
-                # colorclass       <border> <background> <text>
-                #inactive_workspace #4F5B62  #102027      #AAAAAA
-                #focused_workspace  #4F5B62  #37464F      #CCCCCC
-
-                # without workspace borders
-                # colorclass       <border> <background> <text>
-                inactive_workspace #102027  #102027      #AAAAAA
-                focused_workspace  #37464F  #37464F      #CCCCCC
+                # class            border              background          text
+                inactive_workspace $color_primary_dark $color_primary_dark $color_muted_text_on_primary_dark
+                focused_workspace  $color_primary      $color_primary      $color_muted_text_on_primary
         }
-
-#        # blue-grey darker
-#        colors {
-#                background #000A12
-#
-#                statusline #AAAAAA
-#                separator #AAAAAA
-#
-#                # with workspace borders
-#                # colorclass       <border> <background> <text>
-#                #inactive_workspace #777777  #000A12      #AAAAAA
-#                #focused_workspace  #000A12  #AAAAAA      #000000
-#
-#                # without workspace borders
-#                # colorclass       <border> <background> <text>
-#                inactive_workspace #000A12  #000A12      #AAAAAA
-#                focused_workspace  #AAAAAA  #AAAAAA      #000000
-#        }
 }
+
+client.background       $color_primary_darker
+
+# class                 border              background            text                                indicator           child_border
+client.focused          $color_primary      $color_primary        $color_text_on_primary              $color_primary      $color_primary_dark
+client.focused_inactive $color_primary_dark $color_primary_dark   $color_muted_text_on_primary_dark   $color_primary_dark $color_primary_dark
+client.unfocused        $color_primary_dark $color_primary_darker $color_muted_text_on_primary_darker $color_primary_dark $color_primary_dark
+# TODO
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+default_border normal 1
+default_floating_border normal 1
+hide_edge_borders both
+
+# app specific configuration
+for_window [class="mpv"] floating enable
+
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -240,19 +235,3 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 #exec i3-config-wizard
-
-
-default_border normal 1
-default_floating_border normal 1
-hide_edge_borders both
-
-client.background       #000000
-
-# class                 border  backgr. text    indicator child_border
-client.focused          #37464F #37464F #DDDDDD #37464F   #102027
-client.focused_inactive #102027 #102027 #999999 #102027   #102027
-client.unfocused        #102027 #000A12 #888888 #102027   #102027
-# TODO
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
