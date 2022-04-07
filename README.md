@@ -50,12 +50,24 @@ Now this repository can be used with the `dotfiles` alias. For example:
 
 ```bash
 $ dotfiles status
-$ dotfiles add .vimrc
-$ dotfiles commit -m "add .vimrc"
 $ dotfiles add .bashrc
 $ dotfiles commit -m "add .bashrc"
 $ dotfiles push origin main
 ```
+
+# Fonts
+
+- IBM Plex - https://github.com/IBM/plex/
+- DejaVu - https://archlinux.org/packages/extra/any/ttf-dejavu/
+- Kosugi (MotoyaLCedar) - https://fonts.google.com/specimen/Kosugi/
+- Noto - https://archlinux.org/packages/extra/any/noto-fonts/
+- Noto CJK - https://archlinux.org/packages/extra/any/noto-fonts-cjk/
+- Noto Emoji - https://archlinux.org/packages/extra/any/noto-fonts-emoji/
+- Noto Extra - https://archlinux.org/packages/extra/any/noto-fonts-extra/
+
+# Extras
+
+UTF-8 file (useful for testing fonts) - https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
 
 # Sources
 
