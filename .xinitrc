@@ -1,17 +1,16 @@
-# Disable DPMS turning off the screen
+# disable DPMS turning off the screen
 xset -dpms
 xset s off
 
-# Disable bell
+# disable bell
 xset -b
 
-# Set background color
-# blue-grey dark
-#xsetroot -solid "#263238"
-# blue very dark
-xsetroot -solid "#0d1117"
+# set background color
+# blue-grey 900 dark
+xsetroot -solid "#000a12"
 
-# Merge terminal configuration
+# merge terminal configuration
 xrdb -merge ~/.Xresources
 
+# start i3
 exec i3
